@@ -19,6 +19,4 @@ míg a backend egy - szintén ingyenes - sulla.ddns.net domain alá. Egyiknek si
 Netlify-on (link fent), hozzá kapcsoltam egy domain nevet, SSL-el. Sajnos a backend-nek még vannak gyerekbetegségei, így nem kezeli rendesen az SSL-t, ezért a legtöbb böngésző szerint nem biztonságos.
 
 # Known issues / ismert problémák:
-A végpont csak akkor mutat teljes funkcionalitást, ha sikerült korábban betölteni legalább az egyik pizza végpontot ([pizza végpont](https://pizza.kando-dev.eu/Pizza))
-Ez a probléma a helytelen https-certificate telepítéséből adódott ASP.NET Linux környezetben (DONE)
 UPDATE: ALL ISSUES GONE! Dev-certs issuek megoldódtak!
