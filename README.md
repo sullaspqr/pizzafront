@@ -6,17 +6,17 @@ A frontend a nemethb.linkpc.net - ingyenes domain alá lett deployolva,
 míg a backend egy - szintén ingyenes - sulla.ddns.net domain alá. Egyiknek sincs közvetlen A-rekordja, csak aldomain-t kaptam hozzá, illetve CNAME-et kellett beállítani a Netlify-hoz.
 
 # Frontend
-[Frontend](https://nemethb.linkpc.net)
+[Frontend](https://nemethb.linkpc.net) (Obsolete)
 
 # Végpontok listája (swagger):
-[Swagger](https://pizza.kando-dev.eu/swagger/index.html)
+[Swagger](https://pizza.sulla.hu/swagger/index.html)
 
 # Pizza backend:
-[Pizza végpont](http://pizza.kando-dev.eu/Pizza)<br>
-[Pizza végpont ID-ra (pl.1)](http://pizza.kando-dev.eu/Pizza/1)
+[Pizza végpont](https://pizza.sulla.hu/pizza)<br>
+[Pizza végpont ID-ra (pl.1)](https://pizza.sulla.hu/pizza/1)
 
 # Deploy: 
-Netlify-on (link fent), hozzá kapcsoltam egy domain nevet, SSL-el. Sajnos a backend-nek még vannak gyerekbetegségei, így nem kezeli rendesen az SSL-t, ezért a legtöbb böngésző szerint nem biztonságos.
+Netlify-on (link fent), hozzá kapcsoltam egy domain nevet, SSL-el. Sajnos a backend-nek még vannak gyerekbetegségei, így nem kezeli rendesen az SSL-t, ezért a legtöbb böngésző szerint nem biztonságos. (obsolete)
 
 # Known issues / ismert problémák:
 UPDATE: ALL ISSUES GONE! Dev-certs issuek megoldódtak!
