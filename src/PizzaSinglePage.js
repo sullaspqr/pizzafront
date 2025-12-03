@@ -18,7 +18,7 @@ export function PizzaSinglePage(props) {
                 // akkor nem megy, mert egyszerűen nem átveszi az id-t, hanem
                 // megpróbálja átkódolni html-kódra, ami nem sikerül és hibával tér vissza,
                 // illetve a fetch-elés nem hajtódik végre...
-        const res= await fetch(`https://pizza.kando-dev.eu/Pizza/${id}`)
+        const res= await fetch(`https://pizza.sulla.hu/pizza/${id}`)
             const pizza = await res.json();
             setPizza(pizza);
         }
@@ -42,16 +42,15 @@ export function PizzaSinglePage(props) {
                             <div className="card p-3">
                                 <div className="card-body">
                                 <h5 className="card-title">{pizza.name}</h5>
-                                <div className="lead">Gluténmentes: {pizza.isGlutenFree>0? "igen" : "nem" }</div>
                                     <img alt={pizza.name}
                                     className="img-fluid rounded"
                                     style={{maxHeight: "500px"}}
-                                    src={pizza.kepURL ? pizza.kepURL : 
+                                    src={pizza.image_url ? pizza.image_url : 
                                     "https://via.placeholder.com/400x800"} 
                                     />
                                   </div>
-                                  <div><NavLink to="/"><i class="bi bi-backspace"></i></NavLink> &nbsp;&nbsp;&nbsp;
-<NavLink key="y" to={"/mod-pizza/" + pizza.id}><i class="bi bi-pencil"></i></NavLink></div>   
+                                  <div><NavLink to="/"><i className="bi bi-backspace"></i></NavLink> &nbsp;&nbsp;&nbsp;
+<NavLink key="y" to={"/mod-pizza/" + pizza.id}><i className="bi bi-pencil"></i></NavLink></div>   
                             </div>
                         
                     )}

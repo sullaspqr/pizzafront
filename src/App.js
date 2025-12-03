@@ -3,7 +3,7 @@ import { PizzaListPage } from "./PizzaListPage";
 import { PizzaSinglePage } from "./PizzaSinglePage";
 import { PizzaCreatePage } from "./PizzaCreatePage";
 import { PizzaModPage } from "./PizzaModPage";
-import { PizzaDelPage } from "./PizzaDelPage";
+import { Kiskrumpli }  from "./PizzaDelPage";
 import './App.css';
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
         <Route path="/pizza/:pizzaId" exact element={<PizzaSinglePage />} />
         <Route path="/uj-pizza" exact element={<PizzaCreatePage />} />
         <Route path="/mod-pizza/:pizzaId" exact element={<PizzaModPage />} />
-        <Route path="/del-pizza/:pizzaId" exact element={<PizzaDelPage />} />
+        <Route path="/del-pizza/:pizzaId" exact element={<Kiskrumpli />} />
       </Routes>
     </Router>
   );

@@ -12,7 +12,7 @@ export function PizzaCreatePage(){
                 //hanem itt nekünk az kívánatos, hogy elküldje az adatokat a backend-nek
             event.persist();
             event.preventDefault();
-            fetch(`https://pizza.kando-dev.eu/Pizza`, {
+            fetch(`https://pizza.sulla.hu/pizza`, {
                 method: "POST",
                 //bekerült ez az "újítás", ami miatt nem ment:
                 headers: {
@@ -23,8 +23,7 @@ export function PizzaCreatePage(){
 
                 body: JSON.stringify({
                     name: event.target.elements.name.value,
-                    isGlutenFree: event.target.elements.isglutenfree.value,
-                    kepURL: event.target.elements.kepurl.value,
+                    image_url: event.target.elements.kepurl.value,
                 }),
             })
             // ha kész, visszadob a főoldalra! Return-öl a backend-ről minden infót!
@@ -38,12 +37,6 @@ export function PizzaCreatePage(){
                 <label className="col-sm-3 col-form-label">Pizza név:</label>
                 <div className="col-sm-9">
                 <input type="text" name="name" className="form-control" />
-                </div>
-            </div>
-            <div className="form-group row pb-3">
-                <label className="col-sm-3 col-form-label">Gluténmentes:</label>
-                <div className="col-sm-9">
-                <input type="number" name="isglutenfree" className="form-control" />
                 </div>
             </div>
             <div className="form-group row pb-3">

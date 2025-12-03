@@ -7,21 +7,18 @@ export function PizzaModPage(props) {
     const navigate = useNavigate();
     const [pizza,setPizza] = useState([]);
     const[modname,setModname] = useState('');
-    const[modgluten,setModgluten] = useState('');
     const[modkepurl,setModkepurl] = useState('');
 
     useEffect(() => {
         (async () => {
 
             try {
-                const res = await fetch(`https://pizza.kando-dev.eu/Pizza/${id}`)
+                const res = await fetch(`https://pizza.sulla.hu/pizza/${id}`)
                 const pizza = await res.json();
                 setPizza(pizza);
                 setModname(pizza.name);
                 console.log(modname);
-                setModgluten(pizza.isGlutenFree);
-                console.log(modgluten);
-                setModkepurl(pizza.kepURL);
+                setModkepurl(pizza.image_url);
                 console.log(modkepurl);
             }
             catch(error) {
@@ -29,13 +26,10 @@ export function PizzaModPage(props) {
             }
         })
         (); //dependency listában minden olyan változót meg kell adni, amitől függ az oldal render-elése:
-    }, [id,modname,modgluten,modkepurl]);
+    }, [id,modname,modkepurl]);
    
     const modName = event => {
         setModname(event.target.value);
-    }
-    const modIsglutenfree = event => {
-        setModgluten(event.target.value);
     }
     const modKepurl = event => {
         setModkepurl(event.target.value);
@@ -48,7 +42,7 @@ export function PizzaModPage(props) {
             onSubmit={(event) => {
                 event.persist();
                 event.preventDefault();
-                fetch(`https://pizza.kando-dev.eu/Pizza/${id}`, {
+                fetch(`https://pizza.sulla.hu/pizza/${id}`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json',
@@ -56,8 +50,7 @@ export function PizzaModPage(props) {
                     body: JSON.stringify({
                         id: event.target.elements.id.value,
                         name: event.target.elements.name.value,
-                        isGlutenFree: event.target.elements.isglutenfree.value,
-                        kepURL: event.target.elements.kepurl.value,
+                        image_url: event.target.elements.kepurl.value,
                     }),
                 })
                 .then(() => {
@@ -78,16 +71,10 @@ export function PizzaModPage(props) {
                     </div>
                 </div>
                 <div className="form-group row pb-3">
-                    <label className="col-sm-3 col-form-label">Gluténmentes:</label>
-                    <div className="col-sm-9">
-                        <input type="text" name="isglutenfree" className="form-control" defaultValue={pizza.isGlutenFree} onChange={modIsglutenfree}/>
-                    </div>
-                </div>
-                <div className="form-group row pb-3">
                     <label className="col-sm-3 col-form-label">Kép URL-je:</label>
                     <div className="col-sm-9">
-                        <input type="text" name="kepurl" className="form-control" defaultValue={pizza.kepURL} onChange={modKepurl}/>
-                    <img src={pizza.kepURL} height="200px" alt={pizza.name}/>
+                        <input type="text" name="kepurl" className="form-control" defaultValue={pizza.image_url} onChange={modKepurl}/>
+                    <img src={pizza.image_url} height="200px" alt={pizza.name}/>
                     </div>
                 </div>
                 <button type="submit" className="btn btn-success">Küldés</button>
